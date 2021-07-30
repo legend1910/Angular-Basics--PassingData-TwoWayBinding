@@ -4,7 +4,8 @@
 <!--we can use onclick event for typical JavaScript but here we are using (click)-->
 <!-- Should not put too much logic within the quotes i.e(click)="" .You can return boolean values too -->
 <button class="btn btn-primary" (click)="OnAddEmployee()" >Add Employee</button>
-<p>{{AlertMessage}}<p>
+<p>{{AlertMessage}}
+<p>
 
 
 <h3>2.Event Binding</h3>
@@ -14,7 +15,8 @@
   2. you can use this value between the quotes i.e (input)="OnNewEmployeeAdd($event)"
 -->
 <input type="text" (input)="OnNewEmployeeAdd($event)">
-<p>{{ShowValue}}<p>
+<p>{{ShowValue}}
+<p>
 
 <h3>3.Two Way Data Binding</h3>
 <!--
@@ -36,5 +38,8 @@
 <button class="btn btn-primary" [disabled]="!canEnableButton" (click)="OnAddEmployee()">Add </button>
 <p>{{AlertMessage}}</p>
 <!--
-  in the last Snippet We are using Event Binding to listen the click String InterPolation to output the String and propety binding to enable to button after 5 seconds and two  way binding to fetch the data
+  in the above Snippet We are using Event Binding to listen the click String InterPolation to output the String and propety binding to enable to button after 5 seconds and two  way binding to fetch the data
 -->
+<!-- disable button if the text box is empty-->
+<input type="text" [(ngModel)]="EmployeName">
+<button class="btn btn-primary" [disabled]="EmployeName===''"(click)="OnAddEmployee()">Add </button>
