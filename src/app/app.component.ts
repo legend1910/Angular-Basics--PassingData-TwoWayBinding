@@ -6,5 +6,20 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+ AlertMessage="";
+ ShowValue=""
+
+ OnAddEmployee()
+ {
+   this.AlertMessage="The Employee has been created";
+ }
+ OnNewEmployeeAdd(event:Event)
+ {
+   console.log(event);
+   // you can see the emitted data in the console and the target is of type html element
+   // in the console whenever you stroke a key in the input you can see the log where the emitted data is logged and in the data->target->value you can see what value you typed
+   // We are explicitly casting mention  by <HTMLInputElement>
+   this.ShowValue= (<HTMLInputElement>event.target).value;
+ }
+  
 }

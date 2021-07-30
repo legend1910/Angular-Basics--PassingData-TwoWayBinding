@@ -1,4 +1,17 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h4>Event Binding,Passing Value and Two Way Binding</h4>
+<h3>1.Event Binding</h3>
+<!-- Like property binding uses [] Event binding uses ()-->
+<!--we can use onclick event for typical JavaScript but here we are using (click)-->
+<!-- Should not put too much logic within the quotes i.e(click)="" .You can return boolean values too -->
+<button class="btn btn-primary" (click)="OnAddEmployee()" >Add Employee</button>
+<p>{{AlertMessage}}<p>
+
+
+<h3>2.Event Binding</h3>
+<!-- $ is  reserve  variable which can be used inside the template and the value can be used withing the "" i.e (input)="OnNewEmployeeAdd($event)"-->
+<!-- $event is a data emitted along with event where (input) and (click)  are html DOM Elements
+  1. you can pass this $event to the function calling
+  2. you can use this value between the quotes i.e (input)="OnNewEmployeeAdd($event)"
+-->
+<input type="text" (input)="OnNewEmployeeAdd($event)">
+<p>{{ShowValue}}<p>
