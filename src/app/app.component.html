@@ -15,3 +15,26 @@
 -->
 <input type="text" (input)="OnNewEmployeeAdd($event)">
 <p>{{ShowValue}}<p>
+
+<h3>3.Two Way Data Binding</h3>
+<!--
+  1.In Two way binding we combine both property binding and event binding 
+    i.e [] + ()=> [()]
+  2. We need use directives here we are using ngModel for which you need to import 
+      import { FormsModule } from '@angular/forms'; in the app module and also to the import[] in the AppModule
+  3. We can prepoulate it either in the constructor or Initalize in the class 
+
+-->
+<input type="text" [(ngModel)]="EmployeName">
+<p>{{EmployeName}}</p>
+
+<h3>4.Combining All</h3>
+<!--
+  You can use either 1st approach with event binding or second approch by data Binding
+-->
+<input type="text" [(ngModel)]="EmployeName">
+<button class="btn btn-primary" [disabled]="!canEnableButton" (click)="OnAddEmployee()">Add </button>
+<p>{{AlertMessage}}</p>
+<!--
+  in the last Snippet We are using Event Binding to listen the click String InterPolation to output the String and propety binding to enable to button after 5 seconds and two  way binding to fetch the data
+-->

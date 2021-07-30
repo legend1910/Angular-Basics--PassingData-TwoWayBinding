@@ -7,11 +7,19 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
  AlertMessage="";
- ShowValue=""
+ ShowValue="";
+ EmployeName="First Name";
+ canEnableButton=false;
+constructor()
+{
+  setTimeout(()=>{
+    this.canEnableButton=true;
+  }, 5000)
+}
 
  OnAddEmployee()
  {
-   this.AlertMessage="The Employee has been created";
+   this.AlertMessage="The Employee has been created" + this.EmployeName;
  }
  OnNewEmployeeAdd(event:Event)
  {
